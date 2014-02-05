@@ -1,0 +1,94 @@
+/**
+2013-10-12 ver2.0 
+ ATTENTION:now has update to the zend frame work 
+  you need to check whether you have supply the zend framwork
+  change some rules in the db
+*/
+
+配置Zend Framework运行的PHP环境
+首先确认你的PHP环境，Zend Framework 要求 PHP版本不低于5.1.4，但强烈建议使用 5.2.3 或更高版本，因为在这两个版本之间有许多重大安全和性能方面的改善和提高。
+
+PHP环境配置好了之后，请打开php.ini文件，确认PDO扩展是否打开。如果没有请把extension=php_pdo.dll之前的;号给去掉。
+
+打开APACHE文件夹里面的httpd.conf文件，查找到apache的mod_rewrite模块，确认LoadModule rewrite_module modules/mod_rewrite.so是否打开。如果没有请去掉它前面的#号。
+
+查找到httpd.conf文件，如果AllowOverride为None的话，请一定把None都改成all，这样你写.htaccess这样的文件才会起到作用。
+
+重新启动你的APACHE服务器，这样我们的PHP环境就可以运用Zend Framewrok了。
+
+
+ABOUT DB:
+the pw and user in db in \jitv\application\configs\config.ini
+
+1.you need to create a db call tv
+2. you need to create a table
+
+create table av (
+id int primary key auto_increment,
+source varchar(10),
+vid varchar(30),
+title varchar(500),
+description varchar(1000),
+playtime int default 0
+)default charset=utf8;
+
+
+3. then you can add or delete av in the manage page
+add  and delete av is on the page jitv/manage
+the pw is JINET
+user is also JINET
+
+
+About video style: just like in readme1.0
+
+
+
+/**
+version1.0
+Date:13-10-5
+sina is ok now, after decompile the palyer in tucao.com , now all  video sourse is ok
+*/
+
+
+1.create database tvcomment
+
+//attetnion:to make life easier,do not need to do the following things mannually
+//table style 
+create table comment(
+id int primary key auto_increment,
+user varchar(10),
+mode tinyint,
+color int,
+stime int,
+message varchar(256),
+size int,
+timestamp int);
+
+//insert data
+insert into comment(vid,userid,playtime,fontsize,color,mode,timestamp,varchar) vlaues();
+
+2. change pw and user in php/da.class/php
+3.check conf.xml
+
+    <!-- 弹幕加载地址,变量{$id}为弹幕id -->
+    <load>php/GetComment.php?id={$id}</load>                             
+    <!-- POST发送地址,如果不提供则不发送,变量可用 -->
+    <send>php/SendComment.php?id={$id}</send>
+
+ whether php/GetComment.php} and  php/SendComment.php in right positon you locate
+
+3. create link in main page by GET method to player.php
+GET:
+type=youku vid= the encrypted id
+type=qq   vid = the decrypted id (which you can get from flvcd.com)
+type= video (which means sina) vid = the decrypted id (which you can get from flvcd.com)
+//?? DO not know why ,sina can play old video, but cannot play recently released video now??
+
+
+//more about youku
+youku forbid the player to directly play, so there is a php/youku.php to work as a bridge
+however,one in php/youke.php does not work now because I just use tucao/api/youku.php to work, If you need to use you own 
+youku.php you can use flex sdk to recompile the player
+
+4.now , it should works
+

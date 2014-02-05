@@ -1,0 +1,25 @@
+<?php
+require_once 'BaseController.php';
+require_once APPLICATION_PATH.'/models/av.php';
+class IndexController extends BaseController
+{
+
+    public function indexAction()
+    {
+        // action body
+        $av=new av();
+       // $res=$av->fetchAll()->toArray();
+        $av->getAdapter()->query("set names utf8");
+        $sql="select * from av ORDER BY id desc";
+		$res=$av->getAdapter()->query($sql);
+		//$res->
+		$paginator =  Zend_Paginator::factory($res);
+		$this->view->paginator = $paginator;
+        $this->view->av=$res;
+        $this->render('index');
+        
+    }
+
+
+}
+

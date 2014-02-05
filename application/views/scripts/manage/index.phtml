@@ -1,0 +1,23 @@
+<style type="text/css">
+ body{
+        background-image: url(image/IndexBg_6.jpg);
+        background-repeat:repeat;
+       /* background-position:bottom;*/
+        background-attachment:fixed;
+ }
+</style>
+<body>
+
+	<div style="position:absolute; top:20%; left:40%; bottom:40%; right:10%; ">
+		<img src="image/LogIn.png" style="opacity:0.8;height:100%; width:100%;">
+		<div style="position:absolute;top:40%; left:40%;">
+		<form action='/manage/login' method='POST'>
+		user: <input style="height:30px" type='text' name='user'> <br>
+		<br>
+		pw:&nbsp;&nbsp;  <input style="height:30px" type='text' name='pw'>
+		<input type='submit' value='login'>
+		</form>
+		</div>
+	</div>
+</body>
+

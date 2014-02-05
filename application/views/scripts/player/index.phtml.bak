@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0083)http://www.jankoatwarpspeed.com/wp-content/uploads/examples/youtube-adaptable-view/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+    <style type="text/css">
+        body { font-family: Lucida Sans Unicode, Arial, Sans-Serif; font-size:13px;}
+
+        /* Structure */
+        #header,  #comments, #sidebar, #footer {margin:10px 0px;
+             -moz-border-radius:10px;  -webkit-border-radius:10px; padding:30px;filter:alpha(Opacity=80);-moz-opacity:0.5;opacity: 0.9;z-index:100; background-color:#ffffff;}
+        #header h1 { float:right; margin: 70px 0 0 0; font-size:20px; font-weight:bold;}
+        #header h2 {font-size:16px; font-weight:normal; margin:0px; padding:0px;}
+        #header { width:900px; margin:0px auto;}
+        
+        #main {width:960px; margin:0px auto; overflow:hidden;}
+        #toolbox { text-align:right; float:right;}
+        #content { width:540px; float:left;}
+        #comments { width:900px; float:left;}
+        #comments p span {display:block; font-size:16px; color:#B0232A;}
+        #sidebar { width:280px; margin-left:20px; float:right;}
+        #sidebar #ads { width:100%; overflow:hidden;}
+        #sidebar #ads img { float:left; margin:5px; display:block;}
+        #footer { width:900px; margin:0px auto;}
+          
+        /* Change view sprites */
+        .toolbox { float:right; margin-left:10px;}
+        .toolbox a { width:30px; height:20px; float:right; }
+
+        #wideView {background: transparent url(buttons.png) no-repeat scroll 0px 0px; }
+        #wideView:hover { background-position:-30px 0px; }
+        #wideView.wide {background-position:0px -20px; }
+        #wideView.wide:hover { background-position:-30px -20px; }
+     
+        /* Different views */
+        #content.wide { width:960px;}
+        #toolbox.wide { width:960px;}
+        #content.compact, #comments.compact { width:690px;}
+        #sidebar.compact { width:130px;}
+       
+       /* div*/
+        #div2 {  height:330px; filter:alpha(Opacity=80);-moz-opacity:0.5;opacity: 0.5;z-index:100; background-color:#ffffff;  }
+        a { color:#0000ff;}
+        h3 { font-size:30px; font-weight:normal; padding:0; margin:0; color:#B0232A;}
+        em { font-size:10px;}
+    </style>
+    
+   
+
+    
+<script></script>
+
+</head>
+<body screen_capture_injected="true" >
+    <div id="header">
+    <h1>Life recorded for all of us</h1>
+        <br>
+        <img src="/image/jitv.png" size="20px" align="center"><br>
+       
+    </div>
+    <div id="main">
+        <div id="comments">
+            <div class="content">
+                <h3><?=$this->info['title'] ?></h3>
+            </div>
+        
+            
+            <embed id="jitvplayer" 
+                type="application/x-shockwave-flash" 
+                src="/player/jiplayer1.swf"
+                flashvars="vid=<?=$this->info['vid']?>&type=<?=$this->info['source']?>"
+                skin="/player/skin/seawave/seawave.swf"
+                allowscriptaccess="always" 
+                quality="high" 
+                allowfullscreen="true" 
+                width="920px"
+                height="460px"
+                runat="server"
+              ></embed>
+                <p> </p>
+				<p>Description : <?=$this->info['description']?></p>
+                <p>Playtime : <?=$this->info['playtime'] ?></p>
+             
+        </div>
+       
+        <div id="comments">
+            <h3>Share</h3>
+           <!-- JiaThis Button BEGIN -->
+				<div class="jiathis_style_32x32">
+					<a class="jiathis_button_qzone"></a>
+					<a class="jiathis_button_tsina"></a>
+					<a class="jiathis_button_tqq"></a>
+					<a class="jiathis_button_renren"></a>
+					<a class="jiathis_button_weixin"></a>
+					<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+					<a class="jiathis_counter_style"></a>
+                    
+                    <a href="\index"><img src="\image\home.jpg" align="right" width="47" height="47"></a>
+				</div>
+
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1354159008088717" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+        </div>
+    </div>
+<div id="footer">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1857000"></script>
+    <!-- UY END -->
+</div>
+<br>
+    <div id="footer">Copyright &#169; JINetwork 2013</div>
+
+
+</body></html>
